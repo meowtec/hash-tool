@@ -1,0 +1,3 @@
+packages:
+  - packages/hash-tool-online
+  - packages/hash-tool/pkg

@@ -1,0 +1,21 @@
+{
+  "type": "module",
+  "scripts": {
+    "init": "npx zx scripts/build.js",
+    "build": "zx scripts/build.js app",
+    "tscheck": "cd packages/hash-tool-online && npm run check",
+    "eslint": "eslint \"**/src/**.{ts,tsx}\"",
+    "lint": "cargo fmt --check && npm run tscheck && npm run eslint"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.3",
+    "typescript-eslint": "^7.5.0",
+    "zx": "^7.2.3"
+  }
+}
