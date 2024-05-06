@@ -30,7 +30,7 @@ export default function Add() {
       <textarea
         rows={3}
         className="text-field"
-        placeholder="Enter text content here, will be encoded in UTF-8"
+        placeholder="Enter text content here"
         value={text}
         onChange={(e) => setText(e.target.value)}
       ></textarea>

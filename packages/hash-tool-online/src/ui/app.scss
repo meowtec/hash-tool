@@ -58,6 +58,10 @@ textarea {
   &:hover {
     background: #f5f5f5;
   }
+
+  &:nth-child(odd) {
+    background: #fafafa;
+  }
 }
 
 .task-del {
@@ -78,12 +82,14 @@ textarea {
 }
 
 .hash-label {
-  width: 120px;
+  width: 100px;
   flex-shrink: 0;
   font-weight: 600;
+  font-size: 12px;
 }
 
 .hash-value {
+  font-size: 12px;
   word-break: break-all;
 }
 
