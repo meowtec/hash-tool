@@ -10,7 +10,7 @@ export default defineConfig(({ command }) => {
 
   return {
     build: {
-      outDir: isBuild ? '../../..' : undefined,
+      outDir: isBuild ? '../..' : undefined,
     },
     base: isBuild ? 'https://meowtec.github.io/hash-tool/' : undefined,
     plugins: [isBuild ? preact() : react(), wasm(), topLevelAwait()],
