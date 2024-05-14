@@ -1,6 +1,6 @@
 Extremely fast online hash calculator
 
-## algorithm supported
+## Algorithmes
 
 - MD5
 - SHA1
@@ -8,3 +8,8 @@ Extremely fast online hash calculator
 - SHA3 (224 / 256 / 384 / 512)
 - CRC32 (ISO-HDLC)
 - SM3
+
+## Development
+
+1. Install [rust](https://rustup.rs/) toolchain.
+2. `npm run bootstrap && npm run dev`

@@ -8,7 +8,7 @@ export function HashView({ hashState }: { hashState: HashTaskState | null }) {
   if (hashState.stage === 'FINISH') {
     return (
       <div className="hash-value">
-        {formatHash(hashState.hash ?? null)} ({hashState.timing?.toFixed(2)}ms)
+        {formatHash(hashState.hash ?? null)}({hashState.timing?.toFixed(2)}ms)
       </div>
     );
   }

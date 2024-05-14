@@ -2,7 +2,8 @@
   "type": "module",
   "scripts": {
     "dev": "cd packages/hash-tool-online && npm run dev",
-    "build:wasm": "npx zx scripts/build.js",
+    "bootstrap": "npm run build:wasm",
+    "build:wasm": "npx -y zx scripts/build.js",
     "build:app": "zx scripts/build.js app",
     "tscheck": "cd packages/hash-tool-online && npm run check",
     "eslint": "eslint \"**/src/**.{ts,tsx}\"",
