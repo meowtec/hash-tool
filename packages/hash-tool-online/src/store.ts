@@ -13,6 +13,7 @@ export interface HashTaskState {
   processedBytes?: number;
   totalBytes?: number;
   hash?: Uint8Array;
+  timing?: number;
   error?: string;
   cancel?: () => void;
 }
@@ -182,6 +183,7 @@ hashWorkerCluster.setUse((worker, callback) => {
             stage: 'FINISH',
             totalBytes: result.totalBytes,
             hash: result.hash,
+            timing: result.timing,
             cancel: undefined,
           });
         } else {

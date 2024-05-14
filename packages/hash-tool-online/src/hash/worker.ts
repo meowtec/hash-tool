@@ -18,6 +18,7 @@ function removeTask(id: ID) {
 }
 
 async function handleTask({ type, data, id }: HashTask) {
+  const start = performance.now();
   const digest = new HashDigest(type);
   const reader = data instanceof Blob ? new BlobReader(data) : new Uint8ArrayReader(data);
   const { byteLength } = reader;
@@ -55,6 +56,7 @@ async function handleTask({ type, data, id }: HashTask) {
     hash,
     success: true,
     totalBytes: byteLength,
+    timing: performance.now() - start,
   });
 }
 

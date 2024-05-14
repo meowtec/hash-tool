@@ -21,6 +21,7 @@ export interface HashTaskFinish {
   success: true;
   totalBytes: number;
   hash: Uint8Array;
+  timing: number;
 }
 
 export interface HashTaskError {

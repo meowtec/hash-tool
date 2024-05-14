@@ -6,7 +6,11 @@ export function HashView({ hashState }: { hashState: HashTaskState | null }) {
   if (!hashState) return null;
 
   if (hashState.stage === 'FINISH') {
-    return <div className="hash-value">{formatHash(hashState.hash ?? null)}</div>;
+    return (
+      <div className="hash-value">
+        {formatHash(hashState.hash ?? null)} ({hashState.timing?.toFixed(2)}ms)
+      </div>
+    );
   }
 
   const { totalBytes = 0, processedBytes = 0 } = hashState;
