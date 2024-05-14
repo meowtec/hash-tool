@@ -30,8 +30,11 @@ impl HashDigest {
             "sha256" => Box::new(DynDigestHash(Box::new(sha2::Sha256::default()))),
             "sha384" => Box::new(DynDigestHash(Box::new(sha2::Sha384::default()))),
             "sha512" => Box::new(DynDigestHash(Box::new(sha2::Sha512::default()))),
-            "sm3" => Box::new(DynDigestHash(Box::new(sm3::Sm3::new()))),
+            "sha3-224" => Box::new(DynDigestHash(Box::new(sha3::Sha3_224::new()))),
             "sha3-256" => Box::new(DynDigestHash(Box::new(sha3::Sha3_256::new()))),
+            "sha3-384" => Box::new(DynDigestHash(Box::new(sha3::Sha3_384::new()))),
+            "sha3-512" => Box::new(DynDigestHash(Box::new(sha3::Sha3_512::new()))),
+            "sm3" => Box::new(DynDigestHash(Box::new(sm3::Sm3::new()))),
             "crc32" => Box::new(OwnedCrc32Digest::new()),
             _ => unimplemented!("unsupported digest: {}", hash_type),
         };

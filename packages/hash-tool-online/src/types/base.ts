@@ -7,7 +7,10 @@ export type HashType =
   | 'sha512'
   | 'crc32'
   | 'sm3'
-  | 'sha3-256';
+  | 'sha3-224'
+  | 'sha3-256'
+  | 'sha3-384'
+  | 'sha3-512';
 
 export type ID = string | number;
 
@@ -22,5 +25,8 @@ export const SUPPORTED_HASHES: HashType[] = [
   'sha512',
   'crc32',
   'sm3',
+  'sha3-224',
   'sha3-256',
+  'sha3-384',
+  'sha3-512',
 ];
