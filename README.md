@@ -6,5 +6,5 @@ Extremely fast online hash calculator
 - SHA1
 - SHA2 (224 / 256 / 384 / 512)
 - SHA3 (224 / 256 / 384 / 512)
-- CRC32
+- CRC32 (ISO-HDLC)
 - SM3
