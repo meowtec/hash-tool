@@ -28,7 +28,7 @@ sm3 = "0.4.2"
 sha3 = "0.10.8"
 
 [dev-dependencies]
-wasm-bindgen-test = "0.3.34"
+wasm-bindgen-test = "0.3.43"
 
 [profile.release]
 # Tell `rustc` to optimize for small code size.
