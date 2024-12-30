@@ -1,5 +1,7 @@
 Extremely fast online hash calculator
 
+https://meowtec.github.io/hash-tool/
+
 ## Algorithmes
 
 - MD5
