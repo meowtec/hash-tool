@@ -1,12 +1,15 @@
+import { ChangeEvent } from 'react';
+import { useShallow } from 'zustand/shallow';
 import { useAppStore } from '../store';
 import { HashType, SUPPORTED_HASHES } from '../types/base';
-import { ChangeEvent } from 'react';
 
 export default function Options() {
-  const { options, updateOptions } = useAppStore((state) => ({
-    options: state.options,
-    updateOptions: state.updateOptions,
-  }));
+  const { options, updateOptions } = useAppStore(
+    useShallow((state) => ({
+      options: state.options,
+      updateOptions: state.updateOptions,
+    })),
+  );
 
   const handleCheckboxChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { value, checked } = e.target;
@@ -31,7 +34,7 @@ export default function Options() {
       {SUPPORTED_HASHES.map((hashType) => {
         const id = `hash-type-${hashType}`;
         return (
-          <div>
+          <div key={id}>
             <label htmlFor={id}>{hashType}</label>
             <input
               type="checkbox"

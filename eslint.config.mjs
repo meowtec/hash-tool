@@ -1,8 +1,8 @@
-// @ts-check
-
 import eslint from '@eslint/js';
 import tsEslint from 'typescript-eslint';
-import eslintReactHooks from 'eslint-plugin-react-hooks';
+import eslintPluginReact from 'eslint-plugin-react';
+import eslintPluginReactHooks from 'eslint-plugin-react-hooks';
+import { fixupPluginRules } from '@eslint/compat';
 import eslintPrettier from 'eslint-plugin-prettier/recommended';
 
 export default tsEslint.config(
@@ -10,10 +10,22 @@ export default tsEslint.config(
   ...tsEslint.configs.recommended,
   {
     plugins: {
-      'react-hooks': eslintReactHooks,
+      react: eslintPluginReact,
+      'react-hooks': fixupPluginRules(eslintPluginReactHooks),
     },
-    // @ts-ignore
-    rules: eslintReactHooks.configs.recommended.rules,
+    rules: eslintPluginReactHooks.configs.recommended.rules,
   },
   eslintPrettier,
+  {
+    ignores: [
+      'crates/minifier-js/lib/**',
+      'crates/minifier-js/wasm/**',
+      'app/src/components/ui/**',
+    ],
+  },
+  {
+    rules: {
+      '@typescript-eslint/no-explicit-any': 'warn',
+    },
+  },
 );

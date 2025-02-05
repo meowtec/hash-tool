@@ -14,4 +14,5 @@ https://meowtec.github.io/hash-tool/
 ## Development
 
 1. Install [rust](https://rustup.rs/) toolchain.
-2. `npm run bootstrap && npm run dev`
+2. Install [wasm-pack](https://rustwasm.github.io/)
+3. `npm run bootstrap && npm run dev`

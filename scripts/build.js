@@ -1,18 +1,28 @@
-#!/usr/bin/env zx
+/* global process, console */
 import { readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
+import * as path from 'node:path';
 
 const [target] = process.argv.slice(3);
 
-console.log(process.argv);
+console.log('process.argv:', process.argv);
 
-cd('packages/hash-tool');
+const modDir = 'packages/hash-tool';
+const appDir = 'packages/hash-tool-online';
 
-await $`wasm-pack build --release`;
+console.log('wasm-pack start');
+
+execFileSync('wasm-pack', ['build', '--release'], {
+  cwd: modDir,
+  stdio: 'inherit',
+});
+
+console.log('wasm-pack finish');
 
 writeFileSync(
-  'pkg/package.json',
+  path.join(modDir, 'pkg/package.json'),
   JSON.stringify(
-    Object.assign(JSON.parse(readFileSync('pkg/package.json', 'utf-8')), {
+    Object.assign(JSON.parse(readFileSync(path.join(modDir, 'pkg/package.json'), 'utf-8')), {
       name: '@meowtec/hash-tool',
     }),
     null,
@@ -20,17 +30,24 @@ writeFileSync(
   ),
 );
 
-await $`pnpm i`;
+console.log('pnpm i start');
+
+execFileSync('pnpm', ['i'], {
+  shell: true,
+  stdio: 'inherit',
+});
+
+console.log('pnpm i finish');
 
 if (target === 'app') {
-  cd('..');
-
   rmSync('assets', {
     force: true,
     recursive: true,
   });
 
-  cd('hash-tool-online');
-
-  await $`npm run build`;
+  execFileSync('pnpm', ['run', 'build'], {
+    cwd: appDir,
+    shell: true,
+    stdio: 'inherit',
+  });
 }

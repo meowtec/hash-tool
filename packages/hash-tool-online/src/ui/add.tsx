@@ -1,5 +1,4 @@
-import { useRef, MouseEvent, useState } from 'react';
-import { useStore } from 'zustand';
+import { useRef, useState } from 'react';
 import { useAppStore } from '../store';
 
 export default function Add() {
@@ -7,7 +6,7 @@ export default function Add() {
   const [text, setText] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const handleClick = (e: MouseEvent) => {
+  const handleClick = () => {
     inputRef.current?.click();
   };
 
