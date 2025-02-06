@@ -4,7 +4,7 @@ mod traits;
 mod utils;
 use wasm_bindgen::prelude::*;
 
-use impl_crc32::OwnedCrc32Digest;
+use impl_crc32::Crc32Digest;
 use sm3::Digest as _;
 use traits::SimpleDynDigest;
 
@@ -35,7 +35,7 @@ impl HashDigest {
             "sha3-384" => Box::new(DynDigestHash(Box::new(sha3::Sha3_384::new()))),
             "sha3-512" => Box::new(DynDigestHash(Box::new(sha3::Sha3_512::new()))),
             "sm3" => Box::new(DynDigestHash(Box::new(sm3::Sm3::new()))),
-            "crc32" => Box::new(OwnedCrc32Digest::new()),
+            "crc32" => Box::new(Crc32Digest::new()),
             _ => unimplemented!("unsupported digest: {}", hash_type),
         };
 
