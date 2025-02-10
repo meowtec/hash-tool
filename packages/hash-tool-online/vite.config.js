@@ -13,12 +13,12 @@ export default defineConfig(({ command }) => {
       outDir: isBuild ? '../..' : undefined,
     },
     base: isBuild ? 'https://meowtec.github.io/hash-tool/' : undefined,
-    plugins: [isBuild ? preact() : react(), wasm(), topLevelAwait()],
+    plugins: [isBuild ? preact() : react(), topLevelAwait(), wasm()],
     resolve: {
       alias: {},
     },
     worker: {
-      plugins: () => [wasm(), topLevelAwait()],
+      plugins: () => [topLevelAwait(), wasm()],
     },
     server: {
       port: 11211,

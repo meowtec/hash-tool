@@ -11,6 +11,9 @@ importers:
       '@eslint/compat':
         specifier: ^1.2.6
         version: 1.2.6(eslint@9.19.0)
+      '@eslint/js':
+        specifier: ^9.20.0
+        version: 9.20.0
       eslint:
         specifier: ^9.19.0
         version: 9.19.0
@@ -49,7 +52,7 @@ importers:
         version: link:../hash-tool/pkg
       '@preact/preset-vite':
         specifier: ^2.10.1
-        version: 2.10.1(@babel/core@7.26.7)(preact@10.25.4)(vite@6.1.0(@types/node@22.13.1)(sass@1.83.4)(yaml@2.7.0))
+        version: 2.10.1(@babel/core@7.26.7)(preact@10.25.4)(vite@6.0.6(@types/node@22.13.1)(sass@1.83.4)(yaml@2.7.0))
       '@types/react':
         specifier: ^19.0.8
         version: 19.0.8
@@ -58,7 +61,7 @@ importers:
         version: 19.0.3(@types/react@19.0.8)
       '@vitejs/plugin-react':
         specifier: ^4.3.4
-        version: 4.3.4(vite@6.1.0(@types/node@22.13.1)(sass@1.83.4)(yaml@2.7.0))
+        version: 4.3.4(vite@6.0.6(@types/node@22.13.1)(sass@1.83.4)(yaml@2.7.0))
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -81,14 +84,14 @@ importers:
         specifier: ^5.7.3
         version: 5.7.3
       vite:
-        specifier: ^6.1.0
-        version: 6.1.0(@types/node@22.13.1)(sass@1.83.4)(yaml@2.7.0)
+        specifier: 6.0.6
+        version: 6.0.6(@types/node@22.13.1)(sass@1.83.4)(yaml@2.7.0)
       vite-plugin-top-level-await:
         specifier: ^1.4.4
-        version: 1.4.4(rollup@4.34.3)(vite@6.1.0(@types/node@22.13.1)(sass@1.83.4)(yaml@2.7.0))
+        version: 1.4.4(rollup@4.34.3)(vite@6.0.6(@types/node@22.13.1)(sass@1.83.4)(yaml@2.7.0))
       vite-plugin-wasm:
         specifier: ^3.4.1
-        version: 3.4.1(vite@6.1.0(@types/node@22.13.1)(sass@1.83.4)(yaml@2.7.0))
+        version: 3.4.1(vite@6.0.6(@types/node@22.13.1)(sass@1.83.4)(yaml@2.7.0))
       zustand:
         specifier: ^5.0.3
         version: 5.0.3(@types/react@19.0.8)(immer@10.1.1)(react@19.0.0)(use-sync-external-store@1.4.0(react@19.0.0))
@@ -385,6 +388,10 @@ packages:
 
   '@eslint/js@9.19.0':
     resolution: {integrity: sha512-rbq9/g38qjfqFLOVPvwjIvFFdNziEC5S65jmjPw5r6A//QH+W91akh9irMwjDN8zKUTak6W9EsAv4m/7Wnw0UQ==}
+    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@eslint/js@9.20.0':
+    resolution: {integrity: sha512-iZA07H9io9Wn836aVTytRaNqh00Sad+EamwOVJT12GTLw1VGMFV/4JaME+JjLtr9fiGaoWgYnS54wrfWsSs4oQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
   '@eslint/object-schema@2.1.6':
@@ -1985,8 +1992,8 @@ packages:
   vite-prerender-plugin@0.5.5:
     resolution: {integrity: sha512-WUXn08rPL8CkbEeLYQI/O/IAD2ggsy5Fp5tA5QMDOpiGi7J4vNBZW/gqYRmCd1ap3XdeobFCFBYEA5mqv39lAQ==}
 
-  vite@6.1.0:
-    resolution: {integrity: sha512-RjjMipCKVoR4hVfPY6GQTgveinjNuyLw+qruksLDvA5ktI1150VmcMBKmQaEWJhg/j6Uaf6dNCNA0AfdzUb/hQ==}
+  vite@6.0.6:
+    resolution: {integrity: sha512-NSjmUuckPmDU18bHz7QZ+bTYhRR0iA72cs2QAxCqDpafJ0S6qetco0LB3WW2OxlMHS0JmAv+yZ/R3uPmMyGTjQ==}
     engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
     hasBin: true
     peerDependencies:
@@ -2343,6 +2350,8 @@ snapshots:
 
   '@eslint/js@9.19.0': {}
 
+  '@eslint/js@9.20.0': {}
+
   '@eslint/object-schema@2.1.6': {}
 
   '@eslint/plugin-kit@0.2.5':
@@ -2455,17 +2464,17 @@ snapshots:
 
   '@pkgr/core@0.1.1': {}
 
-  '@preact/preset-vite@2.10.1(@babel/core@7.26.7)(preact@10.25.4)(vite@6.1.0(@types/node@22.13.1)(sass@1.83.4)(yaml@2.7.0))':
+  '@preact/preset-vite@2.10.1(@babel/core@7.26.7)(preact@10.25.4)(vite@6.0.6(@types/node@22.13.1)(sass@1.83.4)(yaml@2.7.0))':
     dependencies:
       '@babel/core': 7.26.7
       '@babel/plugin-transform-react-jsx': 7.25.9(@babel/core@7.26.7)
       '@babel/plugin-transform-react-jsx-development': 7.25.9(@babel/core@7.26.7)
-      '@prefresh/vite': 2.4.7(preact@10.25.4)(vite@6.1.0(@types/node@22.13.1)(sass@1.83.4)(yaml@2.7.0))
+      '@prefresh/vite': 2.4.7(preact@10.25.4)(vite@6.0.6(@types/node@22.13.1)(sass@1.83.4)(yaml@2.7.0))
       '@rollup/pluginutils': 4.2.1
       babel-plugin-transform-hook-names: 1.0.2(@babel/core@7.26.7)
       debug: 4.4.0
       kolorist: 1.8.0
-      vite: 6.1.0(@types/node@22.13.1)(sass@1.83.4)(yaml@2.7.0)
+      vite: 6.0.6(@types/node@22.13.1)(sass@1.83.4)(yaml@2.7.0)
       vite-prerender-plugin: 0.5.5
     transitivePeerDependencies:
       - preact
@@ -2479,7 +2488,7 @@ snapshots:
 
   '@prefresh/utils@1.2.0': {}
 
-  '@prefresh/vite@2.4.7(preact@10.25.4)(vite@6.1.0(@types/node@22.13.1)(sass@1.83.4)(yaml@2.7.0))':
+  '@prefresh/vite@2.4.7(preact@10.25.4)(vite@6.0.6(@types/node@22.13.1)(sass@1.83.4)(yaml@2.7.0))':
     dependencies:
       '@babel/core': 7.26.7
       '@prefresh/babel-plugin': 0.5.1
@@ -2487,7 +2496,7 @@ snapshots:
       '@prefresh/utils': 1.2.0
       '@rollup/pluginutils': 4.2.1
       preact: 10.25.4
-      vite: 6.1.0(@types/node@22.13.1)(sass@1.83.4)(yaml@2.7.0)
+      vite: 6.0.6(@types/node@22.13.1)(sass@1.83.4)(yaml@2.7.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -2737,14 +2746,14 @@ snapshots:
       '@typescript-eslint/types': 8.23.0
       eslint-visitor-keys: 4.2.0
 
-  '@vitejs/plugin-react@4.3.4(vite@6.1.0(@types/node@22.13.1)(sass@1.83.4)(yaml@2.7.0))':
+  '@vitejs/plugin-react@4.3.4(vite@6.0.6(@types/node@22.13.1)(sass@1.83.4)(yaml@2.7.0))':
     dependencies:
       '@babel/core': 7.26.7
       '@babel/plugin-transform-react-jsx-self': 7.25.9(@babel/core@7.26.7)
       '@babel/plugin-transform-react-jsx-source': 7.25.9(@babel/core@7.26.7)
       '@types/babel__core': 7.20.5
       react-refresh: 0.14.2
-      vite: 6.1.0(@types/node@22.13.1)(sass@1.83.4)(yaml@2.7.0)
+      vite: 6.0.6(@types/node@22.13.1)(sass@1.83.4)(yaml@2.7.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -4140,19 +4149,19 @@ snapshots:
 
   uuid@10.0.0: {}
 
-  vite-plugin-top-level-await@1.4.4(rollup@4.34.3)(vite@6.1.0(@types/node@22.13.1)(sass@1.83.4)(yaml@2.7.0)):
+  vite-plugin-top-level-await@1.4.4(rollup@4.34.3)(vite@6.0.6(@types/node@22.13.1)(sass@1.83.4)(yaml@2.7.0)):
     dependencies:
       '@rollup/plugin-virtual': 3.0.2(rollup@4.34.3)
       '@swc/core': 1.10.14
       uuid: 10.0.0
-      vite: 6.1.0(@types/node@22.13.1)(sass@1.83.4)(yaml@2.7.0)
+      vite: 6.0.6(@types/node@22.13.1)(sass@1.83.4)(yaml@2.7.0)
     transitivePeerDependencies:
       - '@swc/helpers'
       - rollup
 
-  vite-plugin-wasm@3.4.1(vite@6.1.0(@types/node@22.13.1)(sass@1.83.4)(yaml@2.7.0)):
+  vite-plugin-wasm@3.4.1(vite@6.0.6(@types/node@22.13.1)(sass@1.83.4)(yaml@2.7.0)):
     dependencies:
-      vite: 6.1.0(@types/node@22.13.1)(sass@1.83.4)(yaml@2.7.0)
+      vite: 6.0.6(@types/node@22.13.1)(sass@1.83.4)(yaml@2.7.0)
 
   vite-prerender-plugin@0.5.5:
     dependencies:
@@ -4162,7 +4171,7 @@ snapshots:
       source-map: 0.7.4
       stack-trace: 1.0.0-pre2
 
-  vite@6.1.0(@types/node@22.13.1)(sass@1.83.4)(yaml@2.7.0):
+  vite@6.0.6(@types/node@22.13.1)(sass@1.83.4)(yaml@2.7.0):
     dependencies:
       esbuild: 0.24.2
       postcss: 8.5.1
