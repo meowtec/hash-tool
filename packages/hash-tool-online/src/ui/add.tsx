@@ -43,6 +43,7 @@ export default function Add() {
           Add files
           <input type="file" multiple ref={inputRef} onChange={handleFileInputChange} />
         </button>
+        or drag and drop files
       </div>
     </div>
   );
