@@ -6,7 +6,7 @@
     "build:wasm": "cd packages/hash-tool && wasm-pack build --scope meowtec",
     "bootstrap": "npm run build:wasm && pnpm i",
     "tscheck": "cd packages/hash-tool-online && npm run check",
-    "eslint": "eslint \"**/src/**.{ts,tsx}\"",
+    "eslint": "eslint \"**/src/**/*.{ts,tsx}\"",
     "lint": "cargo fmt --check && npm run tscheck && npm run eslint"
   },
   "devDependencies": {

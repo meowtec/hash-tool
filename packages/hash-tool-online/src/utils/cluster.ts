@@ -30,7 +30,7 @@ interface ClusterOptions<R> {
   use?: UseRunner<R>;
 }
 
-export class Cluster<T, R> {
+export class Cluster<R> {
   private runners: Runner<R>[];
 
   private options: ClusterOptions<R>;
@@ -94,9 +94,9 @@ export class Cluster<T, R> {
     const runner = this.pickRunner();
     if (!runner) return;
 
-    const use = this.options.use ?? emptyUseRunner;
+    const take = this.options.use ?? emptyUseRunner;
 
-    const hasWork = use(runner.runner, () => {
+    const hasWork = take(runner.runner, () => {
       runner.idle = true;
       runner.lastUsedDate = Date.now();
 

@@ -19,6 +19,6 @@ export const createMessage = <T extends MessageType>(
 
 const padZeroTwo = (text: string) => (text.length < 2 ? '0' + text : text);
 
-export const formatHash = (buffer: Uint8Array | null, mode = 'hex') => {
+export const formatHash = (buffer: Uint8Array | null) => {
   return buffer?.reduce((prev, curr) => prev + padZeroTwo(curr.toString(16)), '');
 };

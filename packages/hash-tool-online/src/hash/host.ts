@@ -13,7 +13,7 @@ export function runHashTask(
   options: {
     onProgress: (progress: HashTaskProgress) => void;
     onFinish: (result: HashTaskFinish | HashTaskError) => void;
-  }
+  },
 ) {
   const id = generateId();
 
@@ -36,14 +36,14 @@ export function runHashTask(
     createMessage('TASK_ADD', {
       ...task,
       id,
-    })
+    }),
   );
 
   return () => {
     worker.postMessage(
       createMessage('TASK_CANCEL', {
         id,
-      })
+      }),
     );
   };
 }

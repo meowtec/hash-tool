@@ -18,8 +18,8 @@ export class Uint8ArrayReader implements Reader {
       new Uint8Array(
         this.data.buffer,
         this.data.byteOffset + start,
-        this.data.byteOffset + start + len
-      )
+        this.data.byteOffset + start + len,
+      ),
     );
   }
 }
