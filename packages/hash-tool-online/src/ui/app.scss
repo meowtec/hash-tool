@@ -46,7 +46,7 @@ textarea {
 .form-action {
   display: flex;
   gap: 8px;
-  margin: 8px 0;
+  margin: 12px 0;
 
   button {
     background: #f5f5f5;
@@ -67,12 +67,14 @@ textarea {
 
 .hashes-select {
   display: flex;
-  gap: 16px;
+  gap: 0 8px;
+  flex-wrap: wrap;
 }
 
 .task-list {
   display: grid;
   gap: 8px;
+  margin-top: 16px;
   grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
 }
 
@@ -82,10 +84,6 @@ textarea {
 
   &:hover {
     background: #444;
-  }
-
-  &:nth-child(odd) {
-    background: #303030;
   }
 }
 
@@ -103,12 +101,16 @@ textarea {
   }
 }
 
-.hash-pair {
+.hash-kv {
   display: flex;
+
+  + .hash-kv {
+    margin-top: 8px;
+  }
 }
 
 .hash-label {
-  width: 100px;
+  width: 80px;
   flex-shrink: 0;
   font-weight: 600;
   font-size: 12px;
@@ -132,4 +134,8 @@ textarea {
   &.error div {
     background: #f99;
   }
+}
+
+.hash-dur {
+  user-select: none;
 }
